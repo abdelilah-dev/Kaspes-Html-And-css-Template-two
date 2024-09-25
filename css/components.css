@@ -1,0 +1,52 @@
+/* for the section that repeat on the page */
+
+/* Start section title components  */
+.main-headding {
+    text-align: center;
+}
+
+.main-headding h2 {
+    font-weight: normal;
+    font-size: 40px;
+    position: relative;
+    margin-bottom: 70px;
+    text-transform: uppercase;
+}
+
+.main-headding h2::before,
+.main-headding h2::after {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.main-headding h2::before {
+    content: "";
+    height: 2px;
+    bottom: -30px;
+    background-color: #333;
+    width: 120px;
+}
+
+.main-headding h2::after {
+    content: "";
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    bottom: -38px;
+    background-color: white;
+}
+
+.main-headding p {
+    width: 550px;
+    margin: 0 auto 100px;
+    max-width: 100%;
+    line-height: 2;
+    color: #777;
+}
+
+/* End section title components  */
+
+
