@@ -1,5 +1,11 @@
 /* for the section that repeat on the page */
 
+:root {
+    --small-overly: 50%;
+    --medium-overly: 60%;
+    --large-overly: 70%;
+}
+
 /* Start section title components  */
 .main-headding {
     text-align: center;
@@ -50,3 +56,27 @@
 /* End section title components  */
 
 
+/* Start Overlay SEction Components  */
+.overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 70%);
+}
+
+.overlay.small {
+        background-color: rgb(0 0 0 / 40%);
+}
+
+.overlay.medium {
+    background-color: rgb(0 0 0 / 60%);
+}
+
+.overlay.large {
+        background-color: rgb(0 0 0 / 70%);
+}
+
+/* End Overlay SEction Components  */

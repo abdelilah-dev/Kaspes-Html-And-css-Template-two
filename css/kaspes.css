@@ -6,6 +6,7 @@
     --section-padding: 100px;
     --primary-text-line-heigh: 2;
     --gray-text-color: #777;
+    --main-transition-duration: 0.3s;
 }
 
 /* End Variable */
@@ -14,9 +15,7 @@
 * {
     margin: 0;
     padding: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+
 }
 
 html {
@@ -25,6 +24,9 @@ html {
 
 body {
     font-family: "Open Sans", sans-serif;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 ul {
@@ -177,7 +179,7 @@ ul {
     color: white;
     text-decoration: none;
     font-size: 14px;
-    transition: 0.3s;
+    transition: var(--main-transition-duration);
     padding: 40px 10px;
 }
 
@@ -218,16 +220,7 @@ ul {
     background-size: cover;
 }
 
-.landing .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0 0 0 / 60%);
-}
-
-.landing .overlay .text {
+.landing .text {
     position: absolute;
     left: 0;
     top: 50%;
@@ -253,7 +246,7 @@ ul {
 }
 
 @media (max-width: 767px) {
-    .landing .overlay .text {
+    .landing .text {
         width: 100%;
     }
 
@@ -368,3 +361,650 @@ ul {
 }
 
 /* End Services Section  */
+
+/* Start Design section */
+.design-section {
+    position: relative;
+    height: 600px;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-image: url(../images/design-features.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.design-section .image,
+.design-section .text {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.design-section .image {
+    text-align: center;
+}
+
+.design-section .image {
+    bottom: -130px;
+}
+
+.design-section .text {
+    background-color: var(--transparent-color);
+    color: white;
+    padding: 50px;
+}
+
+.design-section .text h2 {
+    font-weight: normal;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.design-section .text ul li {
+    padding: 15px 0;
+}
+
+.design-section .text ul li::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f108";
+    position: relative;
+    color: white;
+    font-weight: 900;
+    top: 1px;
+    padding: 15px 0;
+    margin-right: 20px;
+}
+
+
+@media (max-width: 767px) {
+    .design-section .image {
+        display: none;
+    }
+}
+
+/* End Design section */
+
+
+/* Start Portfolio section  */
+.portfolio-section {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.portfolio-section .shuffle {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.portfolio-section .shuffle li {
+    padding: 10px;
+    transition: var(--main-transition-duration);
+}
+
+.portfolio-section .shuffle .active {
+    background-color: var(--primary-color);
+}
+
+.portfolio-section .shuffle li:not(.active):hover {
+    color: var(--primary-color);
+}
+
+
+.portfolio-section .img-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.portfolio-section .img-container .box {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-section .img-container .box:hover .caption {
+    bottom: 0;
+
+}
+
+.portfolio-section .img-container .box:hover img {
+    transform: rotate(3deg) scale(1.1);
+}
+
+@media (min-width: 768px) {
+    .portfolio-section .img-container .box {
+        flex-basis: 50%;
+    }
+}
+
+@media (min-width: 1199px) {
+    .portfolio-section .img-container .box {
+        flex-basis: 25%;
+    }
+}
+
+.portfolio-section .img-container .box img {
+    max-width: 100%;
+    position: relative;
+    transition: var(--main-transition-duration);
+}
+
+
+.portfolio-section .img-container .box .caption {
+    position: absolute;
+    left: 0;
+    background: white;
+    padding: 20px;
+    width: 100%;
+    bottom: -100%;
+    transition: var(--main-transition-duration);
+}
+
+.portfolio-section .img-container .box .caption h4 {
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.portfolio-section .img-container .box .caption p {
+    color: var(--primary-color);
+}
+
+.portfolio-section .more {
+    width: fit-content;
+    margin: 30px auto;
+}
+
+.portfolio-section .more a {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all var(--main-transition-duration);
+}
+
+.portfolio-section .more a:hover {
+    color: var(--primary-color);
+    background-color: transparent;
+    outline: 1px solid var(--primary-color);
+}
+
+/* End Portfolio section  */
+
+
+/* Start vedio section  */
+.video-section {
+    position: relative;
+}
+
+.video-section video {
+    width: 100%;
+}
+
+.video-section .text {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--transparent-color);
+    padding: 50px;
+    text-align: center;
+    color: white;
+    max-height: 100%;
+}
+
+@media (max-width: 576px) {
+    .video-section .text {
+        padding: 20px;
+    }
+}
+
+.video-section .text h2 {
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.video-section .text p {
+    margin-bottom: 30px;
+}
+
+.video-section .text button {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    transition: var(--main-transition-duration);
+
+}
+
+.video-section .text button:hover {
+    background-color: transparent;
+    color: black;
+    outline: 1px solid black;
+}
+
+
+/* End vedio section  */
+
+/* Start About Section  */
+.about-section {
+    padding-top: var(--section-padding);
+    overflow: hidden;
+    text-align: center;
+}
+
+.about-section .container img {
+    position: relative;
+    bottom: -120px;
+    margin-top: -120px;
+    max-width: 100%;
+}
+
+@media (max-width: 767px) {
+    .about-section .container img {
+        bottom: -60px;
+        margin-top: -60px;
+    }
+}
+
+/* End About Section  */
+
+/* Start State  */
+.state-section {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    text-align: center;
+    background-image: url(../images/stats.png);
+    background-size: cover;
+    position: relative;
+}
+
+.state-section .container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.state-section .container .box {
+    padding: 50px;
+    background-color: var(--transparent-color);
+    color: white;
+}
+
+@media (max-width: 767px) {
+    .state-section .container .box {
+        flex-basis: 100%;
+    }
+
+    .state-section .container .box:not(:last-child) {
+        border-bottom: 1px solid #ddd;
+
+    }
+
+}
+
+@media (min-width: 768px) {
+    .state-section .container .box {
+        flex-basis: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .state-section .container .box {
+        flex-basis: 25%;
+    }
+}
+
+.state-section .container .box:hover i {
+    background-color: var(--primary-color);
+}
+
+.state-section .container .box i {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    background-color: black;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 30px;
+    transition: var(--main-transition-duration);
+}
+
+.state-section .container .box .number {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0 0 20px;
+}
+
+.state-section .container .box p {
+    font-size: 14px;
+}
+
+/* End State  */
+
+
+/* Start our skills section  */
+
+.our-skills-section {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.our-skills-section .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 992px) {
+    .our-skills-section .container>div {
+        flex-basis: 45%;
+        position: relative;
+    }
+}
+
+.our-skills-section .container>div>h3 {
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 30px;
+}
+
+.our-skills-section .container>div>p {
+    color: var(--gray-text-color);
+    line-height: 2;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.our-skills-section .container .content {
+    display: flex;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.our-skills-section .container .content img {
+    width: 100px;
+    border-radius: 50%;
+    margin-right: 50px;
+}
+
+@media (max-width: 767px) {
+    .our-skills-section .container .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .our-skills-section .container .content img {
+        margin: 0 auto 20px;
+    }
+}
+
+
+.our-skills-section .container .content .text {
+    border-bottom: 1px solid #ccc;
+    line-height: 1.8;
+
+}
+
+.our-skills-section .container .content .text p {
+    color: var(--gray-text-color);
+    text-align: right;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+
+.our-skills-section .testimonials .bullets {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    display: flex;
+}
+
+.our-skills-section .testimonials .bullets li {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid var(--gray-text-color);
+    margin-right: 10px;
+}
+
+.our-skills-section .testimonials .bullets .active {
+    background-color: var(--primary-color);
+}
+
+.our-skills-section .prog-holder {
+    padding-bottom: 50px;
+}
+
+.our-skills-section .prog-holder h4 {
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.our-skills-section .prog-holder .prog {
+    height: 30px;
+    background-color: #dedadc;
+    position: relative;
+}
+
+
+
+.our-skills-section .prog-holder .prog span {
+    height: 100%;
+    background-color: var(--primary-color);
+    display: flex;
+}
+
+.our-skills-section .prog-holder .prog span {
+    height: 100%;
+    background-color: var(--primary-color);
+    display: flex;
+}
+
+.our-skills-section .prog-holder .prog span::before {
+    content: "90%";
+    color: white;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 30px;
+    background: black;
+    top: -40px;
+    border-radius: 8px;
+}
+
+.our-skills-section .prog-holder .prog span::after {
+    content: "";
+    position: absolute;
+    border: 10px solid;
+    border-color: black transparent transparent transparent;
+    top: -10px;
+}
+
+.our-skills-section .prog-holder:first-of-type .prog span::after,
+.our-skills-section .prog-holder:last-of-type .prog span::after {
+    left: calc(90% - 10px);
+}
+
+.our-skills-section .prog-holder:first-of-type .prog span::before,
+.our-skills-section .prog-holder:last-of-type .prog span::before {
+    left: calc(90% - 20px);
+}
+
+.our-skills-section .prog-holder:nth-of-type(2) .prog span::after,
+.our-skills-section .prog-holder:nth-of-type(2) .prog span::after {
+    left: calc(85% - 10px);
+}
+
+.our-skills-section .prog-holder:nth-of-type(2) .prog span::before,
+.our-skills-section .prog-holder:nth-of-type(2) .prog span::before {
+    content: "85%";
+    left: calc(85% - 20px);
+}
+
+.our-skills-section .prog-holder:nth-of-type(3) .prog span::after,
+.our-skills-section .prog-holder:nth-of-type(3) .prog span::after {
+    left: calc(80% - 10px);
+}
+
+.our-skills-section .prog-holder:nth-of-type(3) .prog span::before,
+.our-skills-section .prog-holder:nth-of-type(3) .prog span::before {
+    content: "80%";
+    left: calc(80% - 20px);
+}
+
+
+
+/* End our skills section  */
+
+/* Start Quote Section  */
+
+.quote-section {
+    position: relative;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-image: url(../images/quote.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+
+.quote-section .container {
+    position: relative;
+}
+
+.quote-section .container q {
+    font-size: 30px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.quote-section .container q::before {
+    content: open-quote;
+}
+
+.quote-section .container q::after {
+    content: close-quote;
+}
+
+/* End Quote Section  */
+
+
+/* STart Pricing Section  */
+.pricing-section {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    position: relative;
+}
+
+.pricing-section .plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.pricing-section .plans .plan {
+    text-align: center;
+    position: relative;
+}
+
+.pricing-section .plans .plan .head {
+    padding: 40px 20px;
+    border-top: 1px solid var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.pricing-section .plans .plan .head h3 {
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.pricing-section .plans .plan .head span {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.pricing-section .plans .plan .head span::before {
+    content: "$";
+    font-size: 25px;
+    font-weight: normal;
+    margin-right: 10px;
+    position: relative;
+    top: -40px;
+}
+
+.pricing-section .plans .plan .head span::after {
+    content: "/Mo";
+    font-size: 20px;
+    position: relative;
+    right: -15px;
+}
+
+.pricing-section .plans .plan ul li {
+    padding: 20px;
+    position: relative;
+}
+
+.pricing-section .plan ul::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    bottom: 0;
+    left: 0px;
+    background-color: var(--primary-color);
+    width: 100%;
+}
+
+.pricing-section .plans .plan ul li:not(:last-child):before {
+    content: "";
+    height: 1px;
+    width: 140px;
+    bottom: 0;
+    position: absolute;
+    background: var(--primary-color);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pricing-section .plans .plan .foot a {
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+    color: white;
+    background-color: var(--primary-color);
+    padding: 20px 20px;
+    margin: 30px auto;
+}
+
+.pricing-section .pricing-contact p {
+    margin: 50px auto 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.pricing-section .pricing-contact a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    background-color: var(--primary-color);
+    width: fit-content;
+    position: relative;
+    margin: 20px auto;
+    padding: 15px 30px;
+}
+
+/* End Pricing Section  */
