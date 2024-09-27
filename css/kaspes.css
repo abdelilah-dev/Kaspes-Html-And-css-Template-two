@@ -15,7 +15,9 @@
 * {
     margin: 0;
     padding: 0;
-
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
@@ -643,7 +645,6 @@ ul {
 
     .state-section .container .box:not(:last-child) {
         border-bottom: 1px solid #ddd;
-
     }
 
 }
@@ -705,7 +706,6 @@ ul {
 @media (min-width: 992px) {
     .our-skills-section .container>div {
         flex-basis: 45%;
-        position: relative;
     }
 }
 
@@ -760,13 +760,11 @@ ul {
     margin-bottom: 10px;
 }
 
-
 .our-skills-section .testimonials .bullets {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
     display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .our-skills-section .testimonials .bullets li {
@@ -1008,3 +1006,203 @@ ul {
 }
 
 /* End Pricing Section  */
+
+/* Start Subscribe */
+.subscribe {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-image: url(../images/subscribe.jpg);
+    background-size: cover;
+    position: relative;
+    color: white;
+}
+
+.subscribe .container {
+    display: flex;
+    position: relative;
+}
+
+.subscribe .container i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 25px;
+}
+
+.subscribe .container form {
+    display: flex;
+    width: 500px;
+    max-width: 100%;
+    position: relative;
+}
+
+.subscribe .container form input[type=email] {
+    border: 1px solid white;
+    border-right: none;
+    background: none;
+    padding: 20px 20px 20px 60px;
+    caret-color: var(--main-color);
+    width: calc(100% - 130px);
+}
+
+.subscribe .container form input[type=submit] {
+    background-color: var(--primary-color);
+    padding: 20px;
+    border: 1px solid white;
+    border-left: none;
+    color: white;
+}
+
+.subscribe .container p {
+    line-height: 2;
+    margin-left: 50px;
+}
+
+@media (max-width: 991px) {
+    .subscribe .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .subscribe .container p {
+        margin: 30px 0 0;
+    }
+}
+
+/* End Subscribe */
+
+/* Start Contact Section  */
+.contact-section {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.contact-section .content {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+    .contact-section .content {
+        flex-direction: column;
+    }
+
+    .contact-section .content .info {
+        order: -1;
+        text-align: center;
+    }
+
+    .contact-section .content .info address {
+        margin-bottom: 40px;
+    }
+}
+
+
+.contact-section .content form {
+    flex-basis: 70%;
+}
+
+.contact-section .content .main-input {
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: transparent;
+}
+
+.contact-section .content form textarea[name=msg] {
+    height: 200px;
+}
+
+.contact-section .content form input[type=submit] {
+    background-color: var(--primary-color);
+    padding: 20px;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    display: flex;
+    margin-left: auto;
+    cursor: pointer;
+    transition: var(--main-transition-duration);
+}
+
+.contact-section .content form input[type=submit]:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.contact-section .content .info {
+    flex-basis: 25%;
+}
+
+.contact-section .content .info h4 {
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.contact-section .content .info h4:nth-of-type(2) {
+    margin-top: 90px;
+}
+
+.contact-section .content .info span {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--gray-text-color);
+}
+
+.contact-section .content .info address {
+    color: var(--gray-text-color);
+    line-height: 2;
+}
+
+
+
+/* End Contact Section  */
+
+/* Start Footer Section */
+.footer {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-image: url(../images/subscribe.jpg);
+    background-size: cover;
+    color: white;
+    position: relative;
+}
+
+.footer .container {
+    position: relative;
+    text-align: center;
+}
+
+.footer .container img {
+    margin-bottom: 20px;
+}
+
+.footer .container p {
+    margin: 20px auto;
+    padding: 20px;
+    width: fit-content;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: normal;
+    border-bottom: 1px solid white;
+}
+
+.footer .container .social-link i {
+    padding: 10px 15px;
+}
+
+.footer .container .copyright {
+    margin-top: 60px;
+}
+
+.footer .container .copyright span {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* End Footer Section */
