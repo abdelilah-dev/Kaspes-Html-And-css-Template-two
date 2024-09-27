@@ -1,6 +1,7 @@
 # Kaspes HTml and Css Template Two
-This is my our template using html and css only
-is the PSD template and i convert it to a simple lading page using html and css
+convert PSD design to html and css simple template Clean Code and Responsive Design
+
+The Design from tutorial in channel Elzero Web School for the eng Ossama Elzero
 
 # about work
 - html and Css
